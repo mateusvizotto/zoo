@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Zoologico extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nome',
+        'cidade',
+        'pais',
+    ];
 }

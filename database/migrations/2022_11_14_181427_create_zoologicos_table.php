@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('zoologicos', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->string('cidade');
+            $table->string('pais');
             $table->timestamps();
         });
     }
