@@ -20,5 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/zoologicos', [ZoologicoController::class, 'index']);
-Route::get('/zoologicos', [ZoologicoController::class, 'store']);
-Route::get('/zoologicos', [ZoologicoController::class, 'show']);
+Route::post('/zoologicos', [ZoologicoController::class, 'store']);
+Route::get('/zoologicos/{id}', [ZoologicoController::class, 'show']);

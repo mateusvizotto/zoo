@@ -41,6 +41,8 @@ class ZoologicoController extends Controller
             'cidade' => 'required',
             'pais' => 'required',
         ]);
+
+        return Zoologico::create($request->all());
     }
 
     /**
@@ -51,7 +53,7 @@ class ZoologicoController extends Controller
      */
     public function show($id)
     {
-        return Cliente::findOrFail($id);
+        return Zoologico::findOrFail($id);
     }
 
     /**
