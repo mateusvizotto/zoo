@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Zoologico;
 
 class ZoologicoController extends Controller
 {
@@ -13,7 +15,7 @@ class ZoologicoController extends Controller
      */
     public function index()
     {
-        //
+        return Zoologico::all();
     }
 
     /**
@@ -34,7 +36,11 @@ class ZoologicoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nome' => 'required',
+            'cidade' => 'required',
+            'pais' => 'required',
+        ]);
     }
 
     /**
@@ -45,7 +51,7 @@ class ZoologicoController extends Controller
      */
     public function show($id)
     {
-        //
+        return Cliente::findOrFail($id);
     }
 
     /**
