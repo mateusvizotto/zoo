@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ZoologicoController;
+use App\Http\Controllers\JaulaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/zoologicos', [ZoologicoController::class, 'index']);
 Route::post('/zoologicos', [ZoologicoController::class, 'store']);
 Route::get('/zoologicos/{id}', [ZoologicoController::class, 'show']);
+
+Route::get('/jaulas', [JaulaController::class, 'index']);
+Route::post('/jaulas', [JaulaController::class, 'store']);
+Route::get('/jaulas/{id}', [JaulaController::class, 'show']);
