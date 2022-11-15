@@ -15,7 +15,13 @@ return new class extends Migration
     {
         Schema::create('jaulas', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('zoologico_id')->unsigned();
+            $table->string('nome');
             $table->timestamps();
+            $table->foreign('zoologico_id')
+                    ->references('id')
+                    ->on('zoologicos')
+                    ->onCascade('delete');
         });
     }
 
